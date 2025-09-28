@@ -126,9 +126,9 @@
     </video>
     <div class="overlay">
       <h1>“Style si ibintu—ni attitude.”</h1>
-      <p>Salon y'aba jeune ifise vibes, confidence, na elegance—landing page niyo tanguriro.</p>
-      <button onclick="openWhatsApp()">💈 Tangura Demo</button>
-      <button onclick="playVoice()">🎙️ Tegura client ukoresheje ijwi</button>
+      <p>Salon y’aba jeune ifise vibe, confidence, na elegance—landing page niryo tanguriro.</p>
+      <button onclick="openWhatsApp()">💈 Tangura Demo</button
+      <button onclick="playVoice()">🎙️ fyonda ukoresheje ijwi</button>
     </div>
   </section>
 
@@ -139,7 +139,7 @@
       <div class="card neon">✂️ <strong>Kwimosha</strong><br>Fade, twist, dreadlocks</div>
       <div class="card neon">💅 <strong>Manicure</strong><br>Nails zigezweho</div>
       <div class="card neon">💄 <strong>Makeup</strong><br>Glow y’umwuga</div>
-      <div class="card neon">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y'aba jeune itesa</div>
+      <div class="card neon">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y’urubyiruko</div>
     </div>
   </section>
 
@@ -147,8 +147,8 @@
   <section class="testimonials">
     <h2>🗣️ Ibyo Abakiriya Bavuga</h2>
     <div class="cards">
-      <div class="card">“LP yatumye business yanje igaragara nk’iy’umwuga.”</div>
-      <div class="card">“Bookings 10 mu minsi 4—ntibisanzwe.”</div><div class="card">“WhatsApp inquiries zarazamutse cyane.”</div>
+      <div class="card">“LP yatumye business yanje igaragara nk’iy’umwuga.”</div><div class="card">“Bookings 10 mu minsi 4—ntibisanzwe.”</div>
+      <div class="card">“WhatsApp inquiries zarazamutse cyane.”</div>
     </div>
   </section>
 
@@ -160,11 +160,11 @@
       <input type="tel" name="phone" placeholder="Numero ya telefone" required />
       <select name="service">
         <option value="">Hitamo Serivisi</option>
-        <option value="Kowimosha">Kwimosha</option>
+        <option value="kwimosha">Kwimosha</option>
         <option value="Makeup">Makeup</option>
         <option value="Manicure">Manicure</option>
       </select>
-      <button type="submit">🚀 Ohereza</button>
+      <button type="submit">🚀rungika</button>
     </form>
     <p>💬 Cyangwa <strong><a href="#" onclick="openWhatsApp()">vugana nanjye kuri WhatsApp</a></strong></p>
   </section>
@@ -179,24 +179,29 @@
   <!-- LOCATION -->
   <section class="location">
     <h2>📍 Aho Duherereye</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=YOURMAPEMBED_CODE" width="100%" height="300" allowfullscreen="" loading="lazy"></iframe>
+    <iframe
+      src="https://maps.google.com/maps?q=-3.35879,29.39639&output=embed"
+      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+    </iframe>
   </section>
 
   <!-- SCRIPTS -->
   <script>
     function openWhatsApp() {
-      const message = encodeURIComponent("Nabonye landing page ya salon—ndifuza preview y’iyo business yanjye.");
+      const message = encodeURIComponent("Nabonye landing page ya salon—ndifuza preview ya business yanjye.");
       window.open(`https://wa.me/25771633859?text=${message}`, "_blank");
 }
 
     function playVoice() {
       const msg = new SpeechSynthesisUtterance("Niandikie kwenye WhatsApp sasa hivi.");
-      msg.lang = "sw-TZ";
+      msg.lang = "sw";
       msg.rate = 1;
       msg.pitch = 1;
       msg.volume = 1;
       window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(msg);
+      setTimeout(() => {
+        window.speechSynthesis.speak(msg);
+}, 100);
 }
 
     document.addEventListener("DOMContentLoaded", () => {
