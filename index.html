@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salon StyleZone</title>
-  <meta name="description" content="Salon StyleZone ni salon y’urubyiruko itanga serivisi zigezweho nka kogosha, manicure, makeup, na facials. Fata rendez-vous online.">
-  <meta name="keywords" content="Salon, Kogosha, Manicure, Makeup, Facials, Rwanda, Burundi, Youth Style, Beauty">
-  <meta name="author" content="StyleZone Team">
-  <meta name="robots" content="index, follow" />
+  <title>StyleZone Salon</title>
+  <meta name="description" content="Salon y’urwaruka itanga serivisi zigezweho nka kogosha, makeup, manicure, na facials.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #ff4081;
-      --text-color: #333;
-      --bg-color: #fefefe;
-    }
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: #fefefe;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
     }
     .hero {
       position: relative;
@@ -45,7 +40,7 @@
       top: 30%;
     }
     button {
-      background-color: var(--primary-color);
+      background-color: #ff4081;
       color: white;
       border: none;
       padding: 12px 24px;
@@ -58,67 +53,24 @@
     button:hover {
       transform: scale(1.05);
     }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      max-width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    .neon {
-      border: 2px solid var(--primary-color);
-      box-shadow: 0 0 10px var(--primary-color);
-    }
-    form input, form select {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      width: 80%;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    #countdown {
-      font-weight: bold;
-      font-size: 1.2em;
-      color: var(--primary-color);
-    }
-    iframe {
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    @media (max-width: 600px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .overlay {
-        top: 20%;
-        padding: 40px 15px;
-      }
-      button {
-        width: 80%;
-      }
-    }
     .lang-switcher {
       text-align: right;
       padding: 10px;
+    }
+    .dark-mode {
+      background: #111;
+      color: #eee;
+    }
+    .dark-mode .overlay {
+      background: rgba(0, 0, 0, 0.8);
     }
   </style>
 </head>
 <body>
 
   <div class="lang-switcher">
-    <select onchange="setLanguage(this.value)">
+    <label for="lang">🌐</label>
+    <select id="lang" onchange="setLanguage(this.value)">
       <option value="rw">🇷🇼 Kinyarwanda</option>
       <option value="en">🇬🇧 English</option>
       <option value="fr">🇫🇷 Français</option>
@@ -130,105 +82,34 @@
     <video autoplay muted loop id="bg-video" poster="fallback.jpg">
       <source src="salon-vibe.mp4" type="video/mp4" />
     </video>
-    <div class="overlay">
+    <div class="overlay" data-aos="fade-up">
       <h1 id="heroTitle">Style si ibintu—ni attitude.</h1>
       <p>Salon y’urubyiruko ifite vibe, confidence, na elegance—landing page niyo ntangiriro.</p>
       <button onclick="openWhatsApp()">💈 Tangira Demo</button>
       <button onclick="playVoice()">🎙️ Tegeka nkoresheje ijwi</button>
     </div>
-  </section>
-
-  <section class="services">
-    <h2 id="servicesTitle">🔥 Serivisi Zigezweho</h2>
+  </section><section class="services">
+    <h2 id="servicesTitle" data-aos="fade-up">🔥 Serivisi Zigezweho</h2>
     <div class="cards">
-      <div class="card neon">✂️ <strong>Kogosha</strong><br>Fade, twist, dreadlocks</div>
-      <div class="card neon">💅 <strong>Manicure</strong><br>Nails zigezweho</div>
-      <div class="card neon">💄 <strong>Makeup</strong><br>Glow y’umwuga</div>
-      <div class="card neon">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y’urubyiruko</div>
+      <div class="card neon" data-aos="zoom-in">✂️ <strong>Kogosha</strong><br>Fade, twist, dreadlocks</div>
+      <div class="card neon" data-aos="zoom-in">💅 <strong>Manicure</strong><br>Nails zigezweho</div>
+      <div class="card neon" data-aos="zoom-in">💄 <strong>Makeup</strong><br>Glow y’umwuga</div>
+      <div class="card neon" data-aos="zoom-in">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y’urubyiruko</div>
     </div>
   </section>
 
   <section class="testimonials">
-    <h2>🗣️ Ibyo Abakiriya Bavuga</h2>
+    <h2 data-aos="fade-up">🗣️ Ibyo Abakiriya Bavuga</h2>
     <div class="cards">
-      <div class="card">“LP yatumye business yanjye igaragara nk’iy’umwuga.”</div>
-      <div class="card">“Bookings 10 mu minsi 4—ntibisanzwe.”</div>
-      <div class="card">“WhatsApp inquiries zarazamutse cyane.”</div>
+      <div class="card" data-aos="fade-right">“LP yatumye business yanjye igaragara nk’iy’umwuga.”</div>
+      <div class="card" data-aos="fade-up">“Bookings 10 mu minsi 4—ntibisanzwe.”</div>
+      <div class="card" data-aos="fade-left">“WhatsApp inquiries zarazamutse cyane.”</div>
     </div>
   </section>
 
   <section class="booking">
-    <h2 id="bookingTitle">📅 Fata Rendez-vous</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST">
-      <input type="text" name="name" placeholder="Izina ryawe" required />
-      <input type="tel" name="phone" placeholder="Numero ya telefone" required />
-      <select name="service" required>
-        <option value="">Hitamo Serivisi</option>-top: 20px;
-    }
-    @media (max-width: 600px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .overlay {
-        top: 20%;
-        padding: 40px 15px;
-      }
-      button {
-        width: 80%;
-      }
-    }
-    .lang-switcher {
-      text-align: right;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="lang-switcher">
-    <select onchange="setLanguage(this.value)">
-      <option value="rw">🇷🇼 Kinyarwanda</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="sw">🇰🇪 Kiswahili</option>
-    </select>
-  </div>
-
-  <section class="hero">
-    <video autoplay muted loop id="bg-video" poster="fallback.jpg">
-      <source src="salon-vibe.mp4" type="video/mp4" />
-    </video>
-    <div class="overlay">
-      <h1 id="heroTitle">Style si ibintu—ni attitude.</h1>
-      <p>Salon y’urubyiruko ifite vibe, confidence, na elegance—landing page niyo ntangiriro.</p>
-      <button onclick="openWhatsApp()">💈 Tangira Demo</button>
-      <button onclick="playVoice()">🎙️ Tegeka nkoresheje ijwi</button>
-    </div>
-  </section>
-
-  <section class="services">
-    <h2 id="servicesTitle">🔥 Serivisi Zigezweho</h2>
-    <div class="cards">
-      <div class="card neon">✂️ <strong>Kogosha</strong><br>Fade, twist, dreadlocks</div>
-      <div class="card neon">💅 <strong>Manicure</strong><br>Nails zigezweho</div>
-      <div class="card neon">💄 <strong>Makeup</strong><br>Glow y’umwuga</div>
-      <div class="card neon">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y’urubyiruko</div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <h2>🗣️ Ibyo Abakiriya Bavuga</h2>
-    <div class="cards">
-      <div class="card">“LP yatumye business yanjye igaragara nk’iy’umwuga.”</div>
-      <div class="card">“Bookings 10 mu minsi 4—ntibisanzwe.”</div>
-      <div class="card">“WhatsApp inquiries zarazamutse cyane.”</div>
-    </div>
-  </section>
-
-  <section class="booking">
-    <h2 id="bookingTitle">📅 Fata Rendez-vous</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST">
+    <h2 id="bookingTitle" data-aos="fade-up">📅 Fata Rendez-vous</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST" data-aos="zoom-in">
       <input type="text" name="name" placeholder="Izina ryawe" required />
       <input type="tel" name="phone" placeholder="Numero ya telefone" required />
       <select name="service" required>
@@ -239,17 +120,18 @@
       </select>
       <button type="submit">🚀 Ohereza</button>
     </form>
+    <p>🎁 Nyuma yo kuzuza form, uzohabwa PDF: <em>“10 Style Trends for Youth in 2025”</em></p>
     <p>💬 Cyangwa <strong><a href="#" onclick="openWhatsApp()">vugana nanjye kuri WhatsApp</a></strong></p>
   </section>
 
   <section class="cta">
-    <h2>🎁 Demo ni ubuntu</h2>
+    <h2 data-aos="fade-up">🎁 Demo ni ubuntu</h2>
     <p>⏳ Offer irarangira mu minota <span id="countdown"></span></p>
     <button onclick="openWhatsApp()">💬 Vugana nanjye kuri WhatsApp</button>
   </section>
 
   <section class="location">
-    <h2 id="locationTitle">📍 Aho Duherereye</h2>
+    <h2 id="locationTitle" data-aos="fade-up">📍 Aho Duherereye</h2>
     <iframe src="https://maps.google.com/maps?q=-3.35950,29.39639&output=embed"
       width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
     </iframe>
@@ -277,19 +159,19 @@
       const name = document.querySelector('input[name="name"]').value.trim();
       const phone = document.querySelector('input[name="phone"]').value.trim();
       const service = document.querySelector('select[name="service"]').value;
-      const phoneRegex = /^\+?[0-9]{8,15}$/;
-
-      if (!name || !phone || !service || !phoneRegex.test(phone)) {
-        alert("Nyamuneka zuza ibisabwa byose kandi wandike numero ya telefone neza.");
+      if (!name || !phone || !service) {
+        alert("Nyamuneka zuza ibisabwa byose.");
         e.preventDefault();
+      } else {
+        setTimeout(() => {
+          alert("Urakoze! Kanda hano ukure PDF yawe: https://example.com/style-trends.pdf");
+        }, 1000);
       }
     });
 
-    // Countdown timer
     document.addEventListener("DOMContentLoaded", () => {
       let timeLeft = 300;
       const countdown = document.getElementById("countdown");
-
       function updateCountdown() {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
@@ -301,11 +183,9 @@
           countdown.textContent = "⏳ Time's up! Vugana nanjye kuri WhatsApp.";
         }
       }
-
       updateCountdown();
     });
 
-    // Multilingual support
     const translations = {
       en: {
         heroTitle: "Style is not a thing—it's an attitude.",
@@ -339,6 +219,37 @@
       document.getElementById("bookingTitle").textContent = translations[lang].bookingTitle;
       document.getElementById("locationTitle").textContent = translations[lang].locationTitle;
     }
+
+    // Sticky CTA button
+    const stickyCTA = document.createElement("div");
+    stickyCTA.id = "stickyCTA";
+    stickyCTA.innerHTML = `<button onclick="openWhatsApp()">💬 WhatsApp Demo</button>`;
+    document.body.appendChild(stickyCTA);
+
+    // Dark mode toggle
+    const darkToggle = document.createElement("button");
+    darkToggle.textContent = "🌙 Hindura Mode";
+    darkToggle.style.position = "fixed";
+    darkToggle.style.top = "20px";
+    darkToggle.style.left = "20px";
+    darkToggle.style.zIndex = "999";
+    darkToggle.onclick = function() {
+      document.body.classList.toggle("dark-mode");
+    };
+    document.body.appendChild(darkToggle);
   </script>
+
+  <style>
+    #stickyCTA {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+  </style>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
 </body>
 </html>
