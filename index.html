@@ -3,75 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StyleZone Salon</title>
-  <meta name="description" content="Salon y’urwaruka itanga serivisi zigezweho nka kogosha, makeup, manicure, na facials.">
+  <title>Salon StyleZone - Style ni attitude</title>
+  <meta name="description" content="Salon StyleZone ni salon y’urubyiruko itanga serivisi zigezweho nka kogosha, manicure, makeup, na facials. Fata rendez-vous online." />
+  <meta name="keywords" content="Salon, Kogosha, Manicure, Makeup, Facials, Rwanda, Burundi, Youth Style, Beauty" />
+  <meta name="author" content="StyleZone Team" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/index.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Salon StyleZone - Style ni attitude" />
+  <meta property="og:description" content="Salon y’aba jeune itanga services zigezweho. Fata rendez-vous online." />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salon StyleZone - Style ni attitude">
+  <meta name="twitter:description" content="Salon y’aba jeune itanga services zigezweho. Fata rendez-vous online.">
+  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fefefe;
-      color: #333;
+      margin: 0; padding: 0;
+      background: #fefefe; color: #333;
       transition: background 0.3s, color 0.3s;
-    }
-    .hero {
-      position: relative;
-      height: 100vh;
+}
+    body.dark-mode {
+      background: #121212; color: #eee;
+}
+    a { color: #ff4081; text-decoration: none;}
+    a:hover { text-decoration: underline;}
+
+.lang-switcher {
+      text-align: right; padding: 10px;
+}
+.lang-switcher select {
+      padding: 5px; border-radius: 5px;
+}
+
+.hero {
+      position: relative; height: 100vh;
       background: url('fallback.jpg') center/cover no-repeat;
       overflow: hidden;
-    }
+}
     #bg-video {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 60px 20px;
-      border-radius: 10px;
-      color: white;
-      text-align: center;
-      position: relative;
-      top: 30%;
-    }
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; z-index: -1;
+}
+.overlay {
+      position: relative; top: 30%;
+      background: rgba(0,0,0,0.6); color: #fff;
+      padding: 60px 20px; border-radius: 10px;
+      text-align: center; max-width: 90%; margin: 0 auto;
+}
+
+    section {
+      padding: 40px 20px; text-align: center;
+}
+.cards {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 20px;
+}
+.card {
+      background: #fff; padding: 20px;
+      max-width: 250px; border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: background 0.3s, color 0.3s;
+}
+    body.dark-mode.card {
+      background: #1e1e1e; color: #fff;
+}
+.neon {
+      border: 2px solid #ff4081;
+      box-shadow: 0 0 10px #ff4081;
+}
+
     button {
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1em;
-      border-radius: 30px;
-      cursor: pointer;
-      margin: 10px;
-      transition: transform 0.3s ease;
-    }
-    button:hover {
-      transform: scale(1.05);
-    }
-    .lang-switcher {
-      text-align: right;
-      padding: 10px;
-    }
-    .dark-mode {
-      background: #111;
-      color: #eee;
-    }
-    .dark-mode .overlay {
-      background: rgba(0, 0, 0, 0.8);
-    }
+      background-color: #ff4081; color: #fff;
+      border: none; padding: 12px 24px;
+      font-size: 1em; border-radius: 30px;
+      cursor: pointer; margin: 10px;transition: transform 0.3s ease;
+}
+    button:hover { transform: scale(1.05);}
+
+    form input, form select {
+      display: block; margin: 10px auto;
+      padding: 10px; width: 80%;
+      border-radius: 5px; border: 1px solid #ccc;
+}
+
+    #countdown { font-weight: bold; font-size: 1.2em; color: #ff4081;}
+
+    iframe {
+      width: 100%; height: 300px;
+      border: 0; border-radius: 10px;
+      margin-top: 20px;
+}
+
+.dark-toggle {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #333; color: #fff;
+      padding: 10px; border-radius: 30px;
+      cursor: pointer; z-index: 1000;
+      transition: background 0.3s;
+}
+.dark-toggle:hover { background: #555;}
+
+.scroll-text {
+      position: relative;
+      height: 60px;
+      overflow: hidden;
+      margin: 40px 0;
+}
+.scroll-text p {
+      position: absolute;
+      width: 100%;
+      animation: scrollDown 6s ease-in-out infinite;
+      font-size: 24px;
+      color: #ff4081;
+}
+    @keyframes scrollDown {
+      0% { top: -60px; opacity: 0;}
+      50% { top: 0px; opacity: 1;}
+      100% { top: 60px; opacity: 0;}
+}
+
+    @media (max-width: 600px) {
+.cards { flex-direction: column; align-items: center;}
+.overlay { top: 20%; padding: 40px 15px;}
+      button { width: 80%;}
+.scroll-text p { font-size: 18px;}
+}
   </style>
 </head>
 <body>
 
   <div class="lang-switcher">
-    <label for="lang">🌐</label>
-    <select id="lang" onchange="setLanguage(this.value)">
-      <option value="rw">🇷🇼 Kinyarwanda</option>
+    <select onchange="setLanguage(this.value)" aria-label="Hitamo ururimi">
+      <option value="rw">🇧🇮 Kirundi</option>
       <option value="en">🇬🇧 English</option>
       <option value="fr">🇫🇷 Français</option>
       <option value="sw">🇰🇪 Kiswahili</option>
@@ -82,174 +166,156 @@
     <video autoplay muted loop id="bg-video" poster="fallback.jpg">
       <source src="salon-vibe.mp4" type="video/mp4" />
     </video>
-    <div class="overlay" data-aos="fade-up">
+    <div class="overlay">
       <h1 id="heroTitle">Style si ibintu—ni attitude.</h1>
-      <p>Salon y’urubyiruko ifite vibe, confidence, na elegance—landing page niyo ntangiriro.</p>
-      <button onclick="openWhatsApp()">💈 Tangira Demo</button>
-      <button onclick="playVoice()">🎙️ Tegeka nkoresheje ijwi</button>
-    </div>
-  </section><section class="services">
-    <h2 id="servicesTitle" data-aos="fade-up">🔥 Serivisi Zigezweho</h2>
-    <div class="cards">
-      <div class="card neon" data-aos="zoom-in">✂️ <strong>Kogosha</strong><br>Fade, twist, dreadlocks</div>
-      <div class="card neon" data-aos="zoom-in">💅 <strong>Manicure</strong><br>Nails zigezweho</div>
-      <div class="card neon" data-aos="zoom-in">💄 <strong>Makeup</strong><br>Glow y’umwuga</div>
-      <div class="card neon" data-aos="zoom-in">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y’urubyiruko</div>
+      <p>Salon y'aba jeune ifise vibe, confidence, na elegance—landing page niryo tanguriro.</p>
+      <button onclick="openWhatsApp()">💈 Tanguza Demo</button>
+      <button onclick="playVoice()">🎙️ Tegeka koresheje ijwi</button>
     </div>
   </section>
 
+  <section class="services">
+    <h2 id="servicesTitle">🔥 Serivisi Zigezweho</h2>
+    <div class="cards">
+      <div class="card neon">✂️ <strong>Kwimosha</strong><br>Fade, twist, dreadlocks</div>
+      <div class="card neon">💅 <strong>Manicure</strong><br>Nails zigezweho</div>
+     
+      <div class="card neon">💄 <strong>Makeup</strong><br>Glow y’umwuga</div>
+      <div class="card neon">🧖🏾‍♀️ <strong>Facials</strong><br>Skin care y'aba jeune</div>
+    </div>
+  </section>
+
+  <!-- Smooth Scrolling Text -->
+  <section class="scrolling-message">
+    <div class="scroll-text">
+      <p>💡 StyleZone: Serivisi zigezweho, vibe y'aba jeune, na confidence itagira uko isa.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
   <section class="testimonials">
-    <h2 data-aos="fade-up">🗣️ Ibyo Abakiriya Bavuga</h2>
+    <h2>🗣️ Ivyo Abakiriya Bavuga</h2>
     <div class="cards">
-      <div class="card" data-aos="fade-right">“LP yatumye business yanjye igaragara nk’iy’umwuga.”</div>
-      <div class="card" data-aos="fade-up">“Bookings 10 mu minsi 4—ntibisanzwe.”</div>
-      <div class="card" data-aos="fade-left">“WhatsApp inquiries zarazamutse cyane.”</div>
+      <div class="card">“LP yatumye business yanje igaragara nk’iy’umwuga.”</div>
+      <div class="card">“Bookings 10 mu minsi 4—ntibisanzwe.”</div>
+      <div class="card">“WhatsApp inquiries zaraduze kurwego rwo hejuru cyane.”</div>
     </div>
   </section>
 
+  <!-- Booking Form -->
   <section class="booking">
-    <h2 id="bookingTitle" data-aos="fade-up">📅 Fata Rendez-vous</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST" data-aos="zoom-in">
+    <h2 id="bookingTitle">📅 Fata Rendez-vous</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST">
       <input type="text" name="name" placeholder="Izina ryawe" required />
       <input type="tel" name="phone" placeholder="Numero ya telefone" required />
       <select name="service" required>
         <option value="">Hitamo Serivisi</option>
-        <option value="Kogosha">Kogosha</option>
+        <option value="Kwimosha">Kwimosha</option>
         <option value="Makeup">Makeup</option>
         <option value="Manicure">Manicure</option>
       </select>
-      <button type="submit">🚀 Ohereza</button>
+      <button type="submit">🚀 Rungika</button>
     </form>
-    <p>🎁 Nyuma yo kuzuza form, uzohabwa PDF: <em>“10 Style Trends for Youth in 2025”</em></p>
-    <p>💬 Cyangwa <strong><a href="#" onclick="openWhatsApp()">vugana nanjye kuri WhatsApp</a></strong></p>
+    <p>💬 Cyangwa <strong><a href="#" onclick="openWhatsApp()">vugana nanje kuri WhatsApp</a></strong></p>
   </section>
 
+  <!-- Call to Action -->
   <section class="cta">
-    <h2 data-aos="fade-up">🎁 Demo ni ubuntu</h2>
-    <p>⏳ Offer irarangira mu minota <span id="countdown"></span></p>
-    <button onclick="openWhatsApp()">💬 Vugana nanjye kuri WhatsApp</button>
+    <h2>🎁 Demo ni ubuntu</h2>
+    <p>⏳ Offer irarangira mu minota <span id="countdown">05:00</span></p>
+    <button onclick="openWhatsApp()">💬 Vugana nanje kuri WhatsApp</button>
   </section>
 
+  <!-- Location -->
   <section class="location">
-    <h2 id="locationTitle" data-aos="fade-up">📍 Aho Duherereye</h2>
-    <iframe src="https://maps.google.com/maps?q=-3.35950,29.39639&output=embed"
-      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+    <h2 id="locationTitle">📍 Aho Duherereye</h2>
+    <iframe
+      src="https://maps.google.com/maps?q=-3.35950,29.39639&output=embed"
+      loading="lazy"
+      allowfullscreen>
     </iframe>
   </section>
 
+  <!-- Dark Mode Toggle -->
+  <div class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</div>
+
   <script>
     function openWhatsApp() {
-      const message = encodeURIComponent("Nabonye landing page ya salon—ndifuza preview y’iyo business yanjye.");
+      const message = encodeURIComponent("Nabonye landing page ya salon—ndifuza preview ya business yanjye.");
       window.open(`https://wa.me/25771633859?text=${message}`, "_blank");
-    }
+}
 
     function playVoice() {
-      const msg = new SpeechSynthesisUtterance("Niandikie kwenye WhatsApp sasa hivi.");
-      msg.lang = "sw";
-      msg.rate = 1;
-      msg.pitch = 1;
-      msg.volume = 1;
+      const msg = new SpeechSynthesisUtterance("Soyez-bienvenue .");
+      msg.lang = "fr"; msg.rate = 1; msg.pitch = 1; msg.volume = 1;
       window.speechSynthesis.cancel();
-      setTimeout(() => {
-        window.speechSynthesis.speak(msg);
-      }, 100);
-    }
+      setTimeout(() => { window.speechSynthesis.speak(msg);}, 100);
+}
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+}
 
     document.querySelector("form").addEventListener("submit", function(e) {
-      const name = document.querySelector('input[name="name"]').value.trim();
-      const phone = document.querySelector('input[name="phone"]').value.trim();
-      const service = document.querySelector('select[name="service"]').value;
-      if (!name || !phone || !service) {
-        alert("Nyamuneka zuza ibisabwa byose.");
+      const name = this.name.value.trim();
+      const phone = this.phone.value.trim();
+      const service = this.service.value;
+      if (!name ||!phone ||!service) {
+        alert("Uzuza ibisabwa byose.");
         e.preventDefault();
-      } else {
-        setTimeout(() => {
-          alert("Urakoze! Kanda hano ukure PDF yawe: https://example.com/style-trends.pdf");
-        }, 1000);
-      }
-    });
+}
+});
 
     document.addEventListener("DOMContentLoaded", () => {
       let timeLeft = 300;
-      const countdown = document.getElementById("countdown");
-      function updateCountdown() {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        if (timeLeft > 0) {
+      const countdownEl = document.getElementById("countdown");
+      function update() {
+        const m = Math.floor(timeLeft / 60);
+        const s = timeLeft % 60;
+        countdownEl.textContent = `${m}:${s < 10? '0': ''}${s}`;
+        if (timeLeft> 0) {
           timeLeft--;
-          setTimeout(updateCountdown, 1000);
-        } else {
-          countdown.textContent = "⏳ Time's up! Vugana nanjye kuri WhatsApp.";
-        }
-      }
-      updateCountdown();
-    });
+          setTimeout(update, 1000);
+} else {
+          countdownEl.textContent = "⏳ Time's up! Vugana nanjye kuri WhatsApp.";
+}
+}
+      update();
+});
 
     const translations = {
+      rw: {
+        heroTitle: "Style si ibintu—ni attitude.",
+        servicesTitle: "🔥 Serivisi Zigezweho",bookingTitle: "📅 Fata Rendez-vous",
+        locationTitle: "📍 Aho Duherereye"
+},
       en: {
         heroTitle: "Style is not a thing—it's an attitude.",
         servicesTitle: "🔥 Trending Services",
         bookingTitle: "📅 Book an Appointment",
         locationTitle: "📍 Our Location"
-      },
+},
       fr: {
         heroTitle: "Le style n’est pas un objet—c’est une attitude.",
         servicesTitle: "🔥 Services en vogue",
         bookingTitle: "📅 Prendre un rendez-vous",
         locationTitle: "📍 Notre emplacement"
-      },
+},
       sw: {
         heroTitle: "Mtindo si kitu—ni mtazamo.",
         servicesTitle: "🔥 Huduma maarufu",
         bookingTitle: "📅 Weka miadi",
         locationTitle: "📍 Mahali tulipo"
-      },
-      rw: {
-        heroTitle: "Style si ibintu—ni attitude.",
-        servicesTitle: "🔥 Serivisi Zigezweho",
-        bookingTitle: "📅 Fata Rendez-vous",
-        locationTitle: "📍 Aho Duherereye"
-      }
-    };
+}
+};
 
     function setLanguage(lang) {
       document.getElementById("heroTitle").textContent = translations[lang].heroTitle;
       document.getElementById("servicesTitle").textContent = translations[lang].servicesTitle;
       document.getElementById("bookingTitle").textContent = translations[lang].bookingTitle;
       document.getElementById("locationTitle").textContent = translations[lang].locationTitle;
-    }
-
-    // Sticky CTA button
-    const stickyCTA = document.createElement("div");
-    stickyCTA.id = "stickyCTA";
-    stickyCTA.innerHTML = `<button onclick="openWhatsApp()">💬 WhatsApp Demo</button>`;
-    document.body.appendChild(stickyCTA);
-
-    // Dark mode toggle
-    const darkToggle = document.createElement("button");
-    darkToggle.textContent = "🌙 Hindura Mode";
-    darkToggle.style.position = "fixed";
-    darkToggle.style.top = "20px";
-    darkToggle.style.left = "20px";
-    darkToggle.style.zIndex = "999";
-    darkToggle.onclick = function() {
-      document.body.classList.toggle("dark-mode");
-    };
-    document.body.appendChild(darkToggle);
+}
   </script>
-
-  <style>
-    #stickyCTA {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-    }
-  </style>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
 </body>
 </html>
+```
